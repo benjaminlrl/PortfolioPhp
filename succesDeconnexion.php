@@ -1,10 +1,11 @@
 <?php require "sessionStart.php";?>
 <?php $titlePage="Se connecter"?>
 <?php $langue = isset($_GET['langue']) ? $_GET['langue'] : 'français';
-if ($langue === 'english') {
-    $message = "You have successfully logged out!";
-} else {
+if($langue === 'français') {
     $message = "Vous êtes bien déconnecté !";
+}
+if ($langue === 'english') {
+    $message = "You have successfully logged out !";
 }
 ?>
 <?php require "head.php";?>
