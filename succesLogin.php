@@ -1,15 +1,13 @@
 <?php require "sessionStart.php";?>
 <?php $titlePage="Se connecter"?>
-<?php $langue = isset($_GET['langue']) ? $_GET['langue'] : 'français';
+<?php require "head.php";?>
+<?php $delay = 3;
 if($langue === 'français') {
     $message = "Vous êtes bien connecté !";
 }
 if ($langue === 'english') {
-    $message = "You have successfully logged in!";
-}
-?>
-<?php require "head.php";?>
-<?php $delay = 2.5;?>
+    $message = "You have successfully logged in !";
+}?>
 <head>
     <meta http-equiv="refresh" content="<?php echo $delay; ?>;url=index.php">
 </head>

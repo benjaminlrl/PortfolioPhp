@@ -9,7 +9,7 @@
     <main class='login-main'>
         <div class='wrapper-login'>
             <form action='submitLogin.php' method='POST'>");
-                if($langue ==="français")echo("
+                if($langue ==="français"){echo("
                 <h1>Se connecter</h1>
                 <div class='input-box-login'>
                     <input type='email' placeholder='exemple@domaine.com' name='user_email' required>
@@ -28,8 +28,8 @@
 
                 <div class='register-link-login'>
                     <p>Vous n'avez pas de compte ? <a href='register.php'>S'inscrire</a></p>
-                </div>");
-                if($langue ==="english")echo("
+                </div>");}
+                if($langue ==="english"){echo("
                 <h1>Login</h1>
                 <div class='input-box-login'>
                     <input type='email' placeholder='exemple@domaine.com' name='user_email' required>
@@ -48,32 +48,33 @@
 
                 <div class='register-link-login'>
                     <p>Don't have account ?<a href='register.php'>Register</a></p>
-                </div>");
+                </div>");}
             echo("</form>
         </div>
     </main>
 </section> 
-");} else echo("<main class='login-main'>
+");} else{echo("<main class='login-main'>
         <div class='wrapper-login'>
             <form action='submitLogout.php' method='POST'>");
-            if($langue ==="français")echo("
+            if($langue ==="français"){echo("
                 <h1>Se déconnecter</h1>
                 <div class='input-box-login'>
                     <h3>" .htmlspecialchars($_SESSION['user_email']). "</h3>
                     <i class='fa-solid fa-user' style='color: #fff;'></i>
                 </div>
-                <button type='submit'class='btn-submit-login'>Se déconnecter<i class='fa-solid fa-right-from-bracket'></i></button>");
-                if($langue ==="english")echo("
+                <button type='submit'class='btn-submit-login'>Se déconnecter<i class='fa-solid fa-right-from-bracket'></i></button>");}
+                if($langue ==="english"){echo("
                 <h1>Logout</h1>
                 <div class='input-box-login'>
                     <h3>" .htmlspecialchars($_SESSION['user_email']). "</h3>
                     <i class='fa-solid fa-user' style='color: #fff;'></i>
                 </div>
-                <button type='submit'class='btn-submit-login'>Logout<i class='fa-solid fa-right-from-bracket'></i></button>");
+                <button type='submit'class='btn-submit-login'>Logout<i class='fa-solid fa-right-from-bracket'></i></button>");}
             echo("</form>
         </div>
     </main> 
-</section> ")?>
+</section> 
+");}?>
 
 
 <?php require "footer.php";?>

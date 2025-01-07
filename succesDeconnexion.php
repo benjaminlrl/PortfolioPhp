@@ -1,6 +1,6 @@
 <?php require "sessionStart.php";?>
 <?php $titlePage="Se connecter"?>
-<?php $langue = isset($_GET['langue']) ? $_GET['langue'] : 'français';
+<?php
 if($langue === 'français') {
     $message = "Vous êtes bien déconnecté !";
 }
@@ -9,7 +9,7 @@ if ($langue === 'english') {
 }
 ?>
 <?php require "head.php";?>
-<?php $delay = 2.5;?>
+<?php $delay = 3;?>
 <head>
     <meta http-equiv="refresh" content="<?php echo $delay; ?>;url=index.php">
 </head>
