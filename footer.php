@@ -172,5 +172,6 @@
     </filter>
   </defs>
 </svg>
+<script src="script.js"></script>
 </body>
 </html>

@@ -8,13 +8,13 @@
             if ($langue === "français") { 
                 echo "
                 <div class='items-link'>
-                    <a href='projets.php' class='item-link drop3'>";
+                    <a href='projets.php' class='item-link nav-link drop3'>";
                 if (isset($_SESSION['user_email'])) {
                     echo "Projets";
                 }
                 echo "</a>
-                    <a href='index.php' class='item-link drop3'>Accueil</a>
-                    <a href='login.php' class='item-link drop4'>";
+                    <a href='index.php' class='item-link nav-link drop3'>Accueil</a>
+                    <a href='login.php' class='item-link nav-link drop4'>";
                 if (isset($_SESSION['user_email'])) {
                     echo "Se déconnecter";
                 } else {
@@ -28,13 +28,13 @@
             if ($langue === "english") { 
                 echo "
                 <div class='items-link'>
-                    <a href='projets.php' class='item-link drop3'>";
+                    <a href='projets.php' class='item-link nav-link drop3'>";
                 if (isset($_SESSION['user_email'])) {
                     echo "Projects";
                 }
                 echo "</a>
-                    <a href='index.php' class='item-link drop3'>Home</a>
-                    <a href='login.php' class='item-link drop4'>";
+                    <a href='index.php' class='item-link nav-link drop3'>Home</a>
+                    <a href='login.php' class='item-link nav-link drop4'>";
                 if (isset($_SESSION['user_email'])) {
                     echo "Logout";
                 } else {

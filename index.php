@@ -15,10 +15,20 @@ require 'head.php';
 </section> 
 <div class="icone-up">
     <a href="#section-acceuil"><i class="fa-solid fa-arrow-up fa-bounce fa-2xl"></i></a>
-</div>        
-<?php require 'presentation.php';?>
-<?php require 'parcours.php';?>
-<?php require 'competences.php';?>
-<?php require 'langues.php';?>
+</div> 
+<div class="sections-container"> 
+    <div class="section-wrapper">      
+        <?php require 'presentation.php';?>
+    </div>
+    <div class="section-wrapper"> 
+        <?php require 'parcours.php';?>
+    </div>
+    <div class="section-wrapper">
+        <?php require 'competences.php';?>
+    </div>
+    <div class="section-wrapper">
+        <?php require 'langues.php';?>
+    </div>
+</div>
 <?php require 'certifications.php';?>
 <?php require 'footer.php';?>

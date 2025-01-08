@@ -1,5 +1,5 @@
 <!-- LANGUES -->
-    <section class="section-competences" id="section-langues">
+    <section class="section-langues" id="section-langues">
         <div class="container-competences">
             <div class="title-langue">
                 <i class="fa-solid fa-language"></i>

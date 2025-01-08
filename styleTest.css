@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+}
+
+section {
+    height: 100vh;
+    opacity: 0;
+    transform: translateX(-50vw);
+    transition: opacity 1s ease, transform 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.visible-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-langues { background: #ff5733; }
+.section-competences { background: #33c7ff; }
+.section-parcours { background: #33ff57; }
+.section-presentation { background: #ff33a6; }
