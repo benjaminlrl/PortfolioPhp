@@ -139,11 +139,12 @@
     
     <ul class="footer__links">
       <li>
-        <a href="formContact.php" class="footer__link"><?php if($langue === "français")echo("Me contacter");if($langue === "english")echo("Contact me")?></a>
+        <?php if(isset($_SESSION['group']) && ($_SESSION['group']) === "admin"){echo("<a href='formContact.php' class='footer__link'>");
+        if($langue === "français")echo("Me contacter</a>");if($langue === "english")echo("Contact me");echo("
       </li>
       <li>
-        <a href="doc/02012025_CV_Benjamin_Lorieul.pdf" target="_blank" class="footer__link" download="doc/02012025_CV_Benjamin_Lorieul.pdf"><?php if($langue === "français")echo("Mon CV");if($langue === "english")echo("My CV")?></a>
-      </li>
+        <a href='doc/02012025_CV_Benjamin_Lorieul.pdf' target='_blank' class='footer__link' download='doc/02012025_CV_Benjamin_Lorieul.pdf'>"); if($langue === "français")echo("Mon CV");if($langue === "english")echo("My CV");echo("</a>
+      </li>");}?>
     </ul>
     <div class="footer__socials">
       <a href="" class="footer__social">

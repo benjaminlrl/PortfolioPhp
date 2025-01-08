@@ -278,10 +278,8 @@ header{
     font-family: "Share Tech Mono", sans-serif;
     text-align: center;
     animation: opacity ease-in-out 2.2s;
-}
-
-.main-status span{
     color: #fdfdfdd5;
+    height: 1.5rem;
 }
 
 .status{
@@ -393,6 +391,11 @@ header{
     font-family: "Zen Dots", sans-serif;
     font-size: 3rem;
     margin-bottom: 5%;
+}
+
+.title-parcours{
+    margin-top: 4vh;
+    margin-bottom: 3vh;
 }
 
 .title-langue{
@@ -593,6 +596,7 @@ header{
 
 
 /* LOGIN */
+.section-echecConnexion,
 .section-succesInscription,
 .section-login{
     display: flex;
@@ -607,6 +611,7 @@ header{
     height: 100vh;  
 }
 
+.section-echecConnexion header,
 .section-succesInscription header,
 .section-login header{
     background: transparent;
@@ -620,6 +625,14 @@ header{
     position: absolute;
 }
 
+.section-echecConnexion .drop1,
+.section-echecConnexion .drop2,
+.section-echecConnexion .drop3,
+.section-echecConnexion .drop4,
+.section-echecConnexion .drop5,
+.section-echecConnexion .drop6,
+.section-echecConnexion .drop7,
+.section-echecConnexion .drop8,
 .section-succesInscription .drop1,
 .section-succesInscription .drop2,
 .section-succesInscription .drop3,
@@ -763,11 +776,14 @@ header{
 
 /* INSCRIPTION */
 
+
+.echecConnexion,
 .succesInscription{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 600px;
+    width: 700px;
     background: transparent;
     color: #FFF;
     border-radius: 10px;
@@ -778,10 +794,44 @@ header{
     font-family: 'Poppins', sans-serif;
 }
 
+.msg-succesInscription,
+.msg-echecConnexion{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.succesInscription a,
+.echecConnexion a{
+    border: 2px solid #fff;
+    border-radius: 55px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+}
+
+.succesInscription a:hover,
+.echecConnexion a:hover{
+    background: #fff;
+    color: #af29d8;
+}
+
 .succesInscription i{
     color: rgb(38, 130, 18);
     margin-right: 20px;
     font-size: 50px;
+}
+
+.echecConnexion i{
+    color: rgb(255, 0, 0);
+    margin-right: 20px;
+    font-size: 50px;
+}
+
+.section-echecConnexion.btnRedirection{
+
 }
 
 /* ME CONTACTER */

@@ -1,5 +1,12 @@
 <?php require "sessionStart.php";?>
-<?php if(!isset($_SESSION["user_email"]))$titlePage="Se connecter";else $titlePage="Se déconnecter";?>
+<?php if(!isset($_SESSION["user_email"])){
+    if($langue === "français") $title="Se connecter";
+    if($langue === "english")$title="Login";
+    $titlePage= $title;
+}else{
+    if($langue === "français") $title="Se déconnecter";
+    if($langue === "english")$title="Logout";
+    $titlePage= $title;}?>
 <?php require "head.php";?>
 <body class="body-login">
 

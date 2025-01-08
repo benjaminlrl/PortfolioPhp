@@ -1,7 +1,5 @@
 <?php require 'sessionStart.php';?>
 <?php
-
-// Si une langue est passée dans l'URL, on met à jour la variable $langue
 if (isset($_GET['langue'])) {
     $langue = htmlspecialchars($_GET['langue']); // Sécurisation de la donnée
 }

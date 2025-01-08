@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = getDbConnection();
 
     // Préparer la requête pour récupérer l'utilisateur par son email
-    $stmt = $pdo->prepare("SELECT * FROM portfolio_users WHERE user_email = :user_email");
+    $stmt = $pdo->prepare("SELECT user_email, user_password, user_group FROM portfolio_users WHERE user_email = :user_email");
     $stmt->execute(['user_email' => $username]);
 
     // Récupérer les résultats
@@ -22,11 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Connexion réussie
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_email'] = $user['user_email'];
+        $_SESSION['group'] = $user['user_group'];
         header("Location: succesLogin.php");
         exit;
     } else {
-        // Connexion échouée
-        echo "Nom d'utilisateur ou mot de passe incorrect.";
+        $_SESSION['bul_email'] = $username;
+        header("Location: echecLogin.php");
     }
 }
 ?>

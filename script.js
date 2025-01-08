@@ -18,3 +18,56 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
     });
 });
+
+function animateTexts(elementId, texts, letterDelay = 100, pauseBetweenTexts = 1000) {
+    const element = document.getElementById(elementId);
+    let textIndex = 0;
+
+    function typeText(text, callback) {
+        let currentText = '';
+        let letterIndex = 0;
+
+        function typeLetter() {
+            if (letterIndex < text.length) {
+                currentText += text[letterIndex];
+                element.textContent = currentText;
+                letterIndex++;
+                setTimeout(typeLetter, letterDelay);
+            } else {
+                setTimeout(callback, pauseBetweenTexts);
+            }
+        }
+
+        typeLetter();
+    }
+
+    function eraseText(callback) {
+        let currentText = element.textContent;
+        let letterIndex = currentText.length;
+
+        function removeLetter() {
+            if (letterIndex > 0) {
+                currentText = currentText.slice(0, -1);
+                element.textContent = currentText;
+                letterIndex--;
+                setTimeout(removeLetter, letterDelay);
+            } else {
+                callback();
+            }
+        }
+
+        removeLetter();
+    }
+
+    function startAnimation() {
+        typeText(texts[textIndex], () => {
+            eraseText(() => {
+                textIndex = (textIndex + 1) % texts.length;
+                startAnimation();
+            });
+        });
+    }
+
+    startAnimation();
+}
+

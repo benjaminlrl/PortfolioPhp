@@ -9,6 +9,7 @@
     <main class='login-main'>
         <div class='wrapper-login'>
             <form action='submitInscription.php' method='POST' id='registerForm'>
+                <?php if($langue === "français"){echo("
                 <h1>S'inscrire</h1>
                 <div class='input-box-login'>
                 <input type='email' placeholder='exemple@domaine.com' name='user_email' required id='user_email'>
@@ -23,7 +24,23 @@
                 <i class='fa-solid fa-lock-keyhole' style='color: #fff;'></i>
             </div>
                 <p id='email-error' style='color: red; display: none;'>Les adresses email ne correspondent pas.</p>
-                <button type='submit'class='btn-submit-login'>S'inscrire</button>
+                <button type='submit'class='btn-submit-login'>S'inscrire</button>");}
+                if($langue === "english"){echo("
+                    <h1>Sign up</h1>
+                    <div class='input-box-login'>
+                    <input type='email' placeholder='exemple@domain.com' name='user_email' required id='user_email'>
+                    <i class='fa-solid fa-user'></i>
+                </div>
+                <div class='input-box-login'>
+                    <input type='email' placeholder='exemple@domain.com' name='user_email_check' required id='user_email_check'>
+                    <i class='fa-solid fa-user'></i>
+                </div>
+                <div class='input-box-login'>
+                    <input type='password' placeholder='password' name='user_password'required>
+                    <i class='fa-solid fa-lock-keyhole' style='color: #fff;'></i>
+                </div>
+                    <p id='email-error' style='color: red; display: none;'>Les adresses email ne correspondent pas.</p>
+                    <button type='submit'class='btn-submit-login'>Sign up</button>");}?>
             </form>
         </div>
     </main>
