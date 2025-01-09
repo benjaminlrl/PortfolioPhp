@@ -2,7 +2,7 @@
         <div class="container-certifications">
             <div class="title-competences">
                 <i class="fa-solid fa-file-certificate"></i>
-                <?php if($langue === "français")echo("
+                <?php if($langue === "français"): ?>
                 <h3>Certifications :</h3>
             </div>
                 <div class='card-container'>
@@ -51,8 +51,9 @@
                         </div>
                     </div>
                 </div>
-            </div>");
-                    if($langue === "english")echo("
+            </div>
+            <?php endif; ?>
+            <?php if($langue === "english"): ?>
                 <h3>Certifications:</h3>
             </div>
             <div class='card-container'>
@@ -100,5 +101,6 @@
                         </div>
                     </div>
                 </div>
-            </div>")?>
+            </div>
+        <?php endif ; ?>
     </section>

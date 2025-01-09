@@ -96,12 +96,12 @@ function isInView(element) {
 }
 
 function handleScroll() {
-    const sections = document.querySelectorAll('.section-presentation, .section-competences, .section-langues, .section-parcours');
-    sections.forEach(section => {
-        if (isInView(section)) {
-            section.classList.add('visible-section');
+    const containers = document.querySelectorAll('.container-presentation, .container-competences, .container-langues, .container-parcours');
+    containers.forEach(container => {
+        if (isInView(container)) {
+            container.classList.add('visible-container');
         } else {
-            section.classList.remove('visible-section');
+            container.classList.remove('visible-container');
         }
     });
 }

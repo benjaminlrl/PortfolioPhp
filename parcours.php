@@ -1,7 +1,7 @@
     <!-- PARCOURS -->
     <section class="section-parcours" id="section-parcours">
         <div class="container-parcours">
-            <?php if ($langue === "français")echo("
+            <?php if ($langue === "français"): ?>
                 <div class='parcours'>
                 <div class='title-parcours'>
                     <i class='fa-solid fa-graduation-cap'></i>
@@ -22,8 +22,8 @@
                     <h4 class='etablissement'>Aspiration</h4>
                     <p>Après l'obtention de mon BTS en 2026, je me dirigerais vers une <span class='important'>licence pro</span> en developpemnt web puis sur un <span class='important'>MASTER</span> afin d'obtenir un <span class='important'>BAC+5</span>. Je souhaites continuer en <span class='important'>alternance</span> afin de travailler sur des projets concrets qui m'aiderons à atteindre mes objectifs.</p>
                 </div>
-            </div>")?>
-            <?php if ($langue === "english")echo("
+            </div><?php endif; ?>
+            <?php if ($langue === "english"): ?>
                 <div class='parcours'>
                 <div class='title-parcours'>
                     <i class='fa-solid fa-graduation-cap'></i>
@@ -44,7 +44,7 @@
                     <h4 class='etablissement'>Aspiration</h4>
                     <p>After earning my BTS in 2026, I plan to pursue a <span class='important'>professional bachelor's degree</span> in web development, followed by a <span class='important'>Master's degree</span> to achieve a <span class='important'>BAC+5</span>. I aim to continue in <span class='important'>work-study programs</span> to work on concrete projects that will help me reach my goals.</p>
                 </div>
-            </div>")?>
+            </div><?php endif; ?>
         <div class="icone-down"><a href="#section-competences"><i class="fa-solid fa-arrow-down fa-bounce fa-2xl"></i></a></div>        
         </div>
     </section>
