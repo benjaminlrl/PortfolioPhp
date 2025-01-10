@@ -1,5 +1,5 @@
 <!-- PRESENTATION -->
-<section class="section-presentation" id="section-presentation">
+<section class="section-presentation" id="section-presentation" style="<?= $sectionStyle; ?>">
         <div class="container-presentation">
             <div class="icone-presentation">
                 <i class="fa-sharp fa-solid fa-pen-line"></i>

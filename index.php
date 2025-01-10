@@ -8,27 +8,24 @@ if (isset($_GET['langue'])) {
 $titlePage = 'Benjamin Lorieul';
 require 'head.php';
 ?>
-<body class="body-login">
-<section class="section-acceuil" id="section-acceuil">
+<body class="body-login" style="<?= $bodyStyle; ?>">
+<section class="section-acceuil" id="section-acceuil" style="<?= $sectionStyle; ?>">
     <?php require 'header.php';?>
     <?php require 'acceuil.php';?>
 </section> 
 <div class="icone-up">
     <a href="#section-acceuil"><i class="fa-solid fa-arrow-up fa-bounce fa-2xl"></i></a>
 </div> 
-<div class="sections-container"> 
-    <div class="section-wrapper">      
+      
         <?php require 'presentation.php';?>
-    </div>
-    <div class="section-wrapper"> 
+
         <?php require 'parcours.php';?>
-    </div>
-    <div class="section-wrapper">
+
+
         <?php require 'competences.php';?>
-    </div>
-    <div class="section-wrapper">
+
         <?php require 'langues.php';?>
-    </div>
-</div>
+
+
 <?php require 'certifications.php';?>
 <?php require 'footer.php';?>

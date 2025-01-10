@@ -1,5 +1,5 @@
     <!-- PARCOURS -->
-    <section class="section-parcours" id="section-parcours">
+    <section class="section-parcours" id="section-parcours" >
         <div class="container-parcours">
             <?php if ($langue === "français"): ?>
                 <div class='parcours'>

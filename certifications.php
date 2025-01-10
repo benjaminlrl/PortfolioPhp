@@ -1,4 +1,4 @@
-    <section class="section-certification" id="section-certification">
+    <section class="section-certification" id="section-certification" >
         <div class="container-certifications">
             <div class="title-competences">
                 <i class="fa-solid fa-file-certificate"></i>

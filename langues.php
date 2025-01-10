@@ -1,6 +1,6 @@
 <!-- LANGUES -->
-    <section class="section-langues" id="section-langues">
-        <div class="container-competences">
+    <section class="section-langues" id="section-langues" >
+        <div class="container-langues">
             <div class="title-langue">
                 <i class="fa-solid fa-language"></i>
                 <?php if($langue === "français")echo('
