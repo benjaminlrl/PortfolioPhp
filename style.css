@@ -39,28 +39,35 @@ body{
 }
 
 .sections-container {
-    overflow: hidden; /* Empêche les sections déplacées de provoquer un débordement */
-    width: 100%; /* Garantit que la largeur est limitée à la fenêtre */
+    overflow: hidden;
+    width: 100%;
     min-height: 100vh;
-    position: relative; /* Nécessaire pour gérer les positions absolues si utilisées */
-}
-
-.section-wrapper {
-    overflow: hidden; /* Empêche le débordement individuel */
     position: relative;
 }
 
-.icone-up{
+.section-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.icone-up {
     position: fixed;
     bottom: 5vh;
     right: 5vh;
-    z-index: 10; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
+    cursor: pointer;
+    color: #fff;
 }
 
-.icone-up i{
-    font-size: 20px;
-    color: #f4f4f48c;
+.icone-up.visible-icone {
+    opacity: 1;
+    visibility: visible;
 }
+
+
 .wrapper-acceuil{
     width: 100%;
 }
@@ -211,26 +218,24 @@ header{
 
 /* Style du menu déroulant */
 .dropdown-content {
-    display: none; /* caché par défaut */
+    display: none;
     position: absolute;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     z-index: 1;
     overflow: hidden;
-    opacity: 0; /* invisible par défaut */
-    transform: translateY(-20px); /* Position initiale pour l'animation */
+    opacity: 0;
+    transform: translateY(-20px);
     transition: 0.3s ease-in-out;
 }
 
-/* Lorsque le menu est activé (avec la classe active) */
 .language-selector.active .dropdown-content {
     display: block;
     opacity: 1;
-    transform: translateY(0); /* Position finale pour l'animation */
+    transform: translateY(0);
 }
 
-/* Style des liens dans le menu */
 .dropdown-content a {
     color: #af29d8;
     font-family: "Share Tech Mono", sans-serif;
@@ -254,7 +259,7 @@ header{
     bottom: 0;
     left: 50%; 
     transform: translateX(-50%);
-    width: 60%; /* Ajuste cette valeur si nécessaire */
+    width: 60%;
     border-bottom: 1px solid #af29d8ca;
 }
 
@@ -262,7 +267,6 @@ header{
     color: #fff;
     background: #af29d8;
 }
-
 
 /* MAIN-ACCEUIL */
 .main-acceuil{
@@ -286,15 +290,14 @@ header{
 
 .main-status{
     font-size: 1.5rem;
-    color: #ffffffae;
     font-weight: 600;
     letter-spacing: .3rem;
     font-family: "Share Tech Mono", sans-serif;
     text-align: center;
     animation: opacity ease-in-out 2.2s;
-    color: #fdfdfdd5;
     height: 1.5rem;
     margin-bottom: 30vh;
+    color: #ffffff92;;
 }
 
 .status{
@@ -318,7 +321,6 @@ header{
     width: 180px;
     text-align: center;
     box-shadow: #000000a9 0 0 25px;
-    
 }
 
 .status-gauche{
@@ -378,9 +380,9 @@ header{
 .title-competences i,
 .title-parcours i,
 .icone-presentation{
-    font-size: 40px;  /* Taille de l'icône */
-    background: linear-gradient(#7c00c4, #fa67ff 100%);/* Dégradé */
-    -webkit-background-clip: text;  /* Appliquer le dégradé au texte */
+    font-size: 40px;
+    background: linear-gradient(#7c00c4, #fa67ff 100%);
+    -webkit-background-clip: text; 
     color: transparent;
 }
 
@@ -459,9 +461,9 @@ header{
 
 .formation i{
     margin-bottom: 5px;
-    font-size: 35px;  /* Taille de l'icône */
-    background: linear-gradient(#7c00c4, #ffaf47 100%);/* Dégradé */
-    -webkit-background-clip: text;  /* Appliquer le dégradé au texte */
+    font-size: 35px;
+    background: linear-gradient(#7c00c4, #ffaf47 100%);
+    -webkit-background-clip: text;
     color: transparent;
 }
 

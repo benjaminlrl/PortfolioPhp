@@ -14,9 +14,8 @@ require 'head.php';
     <?php require 'acceuil.php';?>
 </section> 
 <div class="icone-up">
-    <a href="#section-acceuil"><i class="fa-solid fa-arrow-up fa-bounce fa-2xl"></i></a>
-</div> 
-      
+    <i class="fa-solid fa-arrow-up fa-bounce fa-2xl"></i>
+</div>      
         <?php require 'presentation.php';?>
 
         <?php require 'parcours.php';?>

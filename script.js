@@ -3,124 +3,131 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownToggle = document.getElementById("dropdown-toggle");
     const languageSelector = document.querySelector(".language-selector");
 
-    dropdownToggle.addEventListener("click", (event) => {
-        event.stopPropagation();
-        languageSelector.classList.toggle("active");
-    });
+    if (dropdownToggle && languageSelector) {
+        dropdownToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
+            languageSelector.classList.toggle("active");
+        });
 
-    document.addEventListener("click", () => {
-        languageSelector.classList.remove("active");
-    });
+        document.addEventListener("click", () => {
+            languageSelector.classList.remove("active");
+        });
 
-    languageSelector.querySelector(".dropdown-content").addEventListener("click", (event) => {
-        event.stopPropagation();
-    });
-
-    // Gestion des ancres
-    if (window.location.hash) {
-        const id = window.location.hash.substring(1);
-        const targetElement = document.getElementById(id);
-
-        if (targetElement) {
-            const offset = window.innerHeight / 2 - targetElement.getBoundingClientRect().height / 2;
-
-            window.scrollTo({
-                top: targetElement.offsetTop - offset,
-                behavior: "smooth",
+        const dropdownContent = languageSelector.querySelector(".dropdown-content");
+        if (dropdownContent) {
+            dropdownContent.addEventListener("click", (event) => {
+                event.stopPropagation();
             });
-
-            history.replaceState(null, null, ' ');
         }
     }
-});
 
-// Animation de texte
-function animateTexts(elementId, texts, letterDelay = 100, pauseBetweenTexts = 1000) {
-    const element = document.getElementById(elementId);
-    if (!element) return;
+    // Animation de texte
+    function animateTexts(elementId, texts, letterDelay = 100, pauseBetweenTexts = 1000) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
 
-    let textIndex = 0;
+        let textIndex = 0;
 
-    function typeText(text, callback) {
-        let currentText = '';
-        let letterIndex = 0;
+        function typeText(text, callback) {
+            let currentText = '';
+            let letterIndex = 0;
 
-        function typeLetter() {
-            if (letterIndex < text.length) {
-                currentText += text[letterIndex];
-                element.textContent = currentText;
-                letterIndex++;
-                setTimeout(typeLetter, letterDelay);
+            function typeLetter() {
+                if (letterIndex < text.length) {
+                    currentText += text[letterIndex];
+                    element.textContent = currentText;
+                    letterIndex++;
+                    setTimeout(typeLetter, letterDelay);
+                } else {
+                    setTimeout(callback, pauseBetweenTexts);
+                }
+            }
+
+            typeLetter();
+        }
+
+        function eraseText(callback) {
+            let currentText = element.textContent;
+            let letterIndex = currentText.length;
+
+            function removeLetter() {
+                if (letterIndex > 0) {
+                    currentText = currentText.slice(0, -1);
+                    element.textContent = currentText;
+                    letterIndex--;
+                    setTimeout(removeLetter, letterDelay);
+                } else {
+                    callback();
+                }
+            }
+
+            removeLetter();
+        }
+
+        function startAnimation() {
+            typeText(texts[textIndex], () => {
+                eraseText(() => {
+                    textIndex = (textIndex + 1) % texts.length;
+                    startAnimation();
+                });
+            });
+        }
+
+        startAnimation();
+    }
+
+    // Gestion du scroll pour les conteneurs
+    function isInView(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    function handleScroll() {
+        const containers = document.querySelectorAll('.container-presentation, .container-competences, .container-langues, .container-parcours');
+        containers.forEach(container => {
+            if (isInView(container)) {
+                container.classList.add('visible-container');
             } else {
-                setTimeout(callback, pauseBetweenTexts);
+                container.classList.remove('visible-container');
+            }
+        });
+
+        // Gestion de l'icône au scroll
+        const iconeUp = document.querySelector('.icone-up');
+        if (iconeUp) {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+
+            if (scrollTop > windowHeight) {
+                iconeUp.classList.add('visible-icone');
+            } else {
+                iconeUp.classList.remove('visible-icone');
             }
         }
-
-        typeLetter();
     }
 
-    function eraseText(callback) {
-        let currentText = element.textContent;
-        let letterIndex = currentText.length;
-
-        function removeLetter() {
-            if (letterIndex > 0) {
-                currentText = currentText.slice(0, -1);
-                element.textContent = currentText;
-                letterIndex--;
-                setTimeout(removeLetter, letterDelay);
-            } else {
-                callback();
-            }
-        }
-
-        removeLetter();
-    }
-
-    function startAnimation() {
-        typeText(texts[textIndex], () => {
-            eraseText(() => {
-                textIndex = (textIndex + 1) % texts.length;
-                startAnimation();
+    // Remonter en haut de la page
+    const iconeUp = document.querySelector('.icone-up');
+    if (iconeUp) {
+        iconeUp.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     }
 
-    startAnimation();
-}
-
-// Gestion du scroll
-function isInView(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom >= 0;
-}
-
-function handleScroll() {
-    const containers = document.querySelectorAll('.container-presentation, .container-competences, .container-langues, .container-parcours');
-    containers.forEach(container => {
-        if (isInView(container)) {
-            container.classList.add('visible-container');
+    // Header : activer le lien correspondant à l'URL actuelle
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active-link');
         } else {
-            container.classList.remove('visible-container');
+            link.classList.remove('active-link');
         }
     });
-}
 
-window.addEventListener('scroll', handleScroll);
-handleScroll();
-
-
-  // Récupère toutes les balises avec la classe 'nav-link'
-const links = document.querySelectorAll('.nav-link');
-
-  // Parcourt chaque lien
-links.forEach(link => {
-    // Compare le href du lien avec l'URL actuelle
-    if (link.href === window.location.href) {
-      link.classList.add('active-link'); // Ajoute la classe active
-    } else {
-      link.classList.remove('active-link'); // Au cas où, enlève l'ancienne classe active
-    }
-  });
-
-
+    // Écoute des événements de défilement
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initialisation
+});
