@@ -1,18 +1,16 @@
-function isInView(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom >= 0;
+const iconeUp = document.querySelector('.icone-up');
+
+function checkScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop; 
+
+    if (scrollTop > 0) { 
+        iconeUp.classList.add('visible-icone'); 
+    } else {
+        iconeUp.classList.remove('visible-icone'); 
+    }
 }
 
-function handleScroll() {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        if (isInView(section)) {
-            section.classList.add('visible-section');
-        } else {
-            section.classList.remove('visible-section');
-        }
-    });
-}
+window.addEventListener('scroll', checkScroll);
 
-window.addEventListener('scroll', handleScroll);
-handleScroll(); // Vérifie les sections au chargement
+// Exécution initiale pour vérifier l'état au chargement
+checkScroll();

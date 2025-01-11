@@ -10,21 +10,15 @@ require 'head.php';
 ?>
 <body class="body-login" style="<?= $bodyStyle; ?>">
 <section class="section-acceuil" id="section-acceuil" style="<?= $sectionStyle; ?>">
-    <?php require 'header.php';?>
-    <?php require 'acceuil.php';?>
+<?php require 'header.php';?>
+<?php require 'acceuil"php';?>
 </section> 
 <div class="icone-up">
     <i class="fa-solid fa-arrow-up fa-bounce fa-2xl"></i>
 </div>      
-        <?php require 'presentation.php';?>
-
-        <?php require 'parcours.php';?>
-
-
-        <?php require 'competences.php';?>
-
-        <?php require 'langues.php';?>
-
-
+<?php require 'presentation.php';?>
+<?php require 'parcours.php';?>
+<?php require 'competences.php';?>
+<?php require 'langues.php';?>
 <?php require 'certifications.php';?>
 <?php require 'footer.php';?>
