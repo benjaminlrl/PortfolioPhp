@@ -15,12 +15,12 @@
                 <div class='formation'>
                     <i class='fa-solid fa-spinner'></i>
                     <h4 class='etablissement'>ISCB</h4>
-                    <p><span class='important'>BTS SIO SLAM</span> à l'école ISCB - Je suis en alternance pour le <span class='important'>ministère des armées </span> / <span class='important'>DRHAT</span>. J'ai choisis l'option <span class='important'>SLAM</span> afin de concrétiser le lancement de mon projet d'avenir, devenir un des meilleurs <span class='important'>développeur web</span>. Tout en gagnant de l'expérience professionelle, je suis une formation de 2 ans qui va me permettre d'acquérir de nombreuses <span class='important'>qualités professionelles et techniques</span>.</p>
+                    <p><span class='important'>BTS SIO SLAM</span> à l'école ISCB - Je suis en alternance pour le <span class='important'>ministère des armées </span> / <span class='important'>DRHAT</span>. J'ai choisi l'option <span class='important'>SLAM</span> afin de concrétiser le lancement de mon projet d'avenir, devenir un des meilleurs <span class='important'>développeur web</span>. Tout en gagnant de l'expérience professionelle, je suis une formation de 2 ans qui va me permettre d'acquérir de nombreuses <span class='important'>qualités professionelles et techniques</span>.</p>
                 </div>
                 <div class='formation'>
                     <i class='fa-sharp fa-solid fa-lightbulb-gear'></i>
                     <h4 class='etablissement'>Aspiration</h4>
-                    <p>Après l'obtention de mon BTS en 2026, je me dirigerais vers une <span class='important'>licence pro</span> en developpemnt web puis sur un <span class='important'>MASTER</span> afin d'obtenir un <span class='important'>BAC+5</span>. Je souhaites continuer en <span class='important'>alternance</span> afin de travailler sur des projets concrets qui m'aiderons à atteindre mes objectifs.</p>
+                    <p>Après l'obtention de mon BTS en 2026, je me dirigerais vers une <span class='important'>licence pro</span> en developpement web puis sur un <span class='important'>MASTER</span> afin d'obtenir un <span class='important'>BAC+5</span>. Je souhaites continuer en <span class='important'>alternance</span> afin de travailler sur des projets concrets qui m'aiderons à atteindre mes objectifs.</p>
                 </div>
             </div><?php endif; ?>
             <?php if ($langue === "english"): ?>

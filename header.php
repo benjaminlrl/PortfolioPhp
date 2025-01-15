@@ -3,7 +3,7 @@
     <div class="topbar-wrapper-acceuil">
         <div class="item-logo drop1">
             <div class="theme-toggle">
-                <button id="theme-toggle">Changer de thème</button>
+                <button id="changeColorBtn">Changer de thème</button>
             </div>
             <a href="index.php"><h3>Benjamin.</h3></a>
         </div>

@@ -9,7 +9,7 @@
             <p class="status-droite">&lt;/&gt; développeur</p>
         </div> -->
     <?php elseif($langue === "english"): ?>
-        <h2>Hello&nbsp;! <i class="fa-regular fa-hand-wave" style="color: #ffffff;"></i><br>I am Benjamin</h2>
+        <h2>Hi&nbsp;! <i class="fa-regular fa-hand-wave" style="color: #ffffff;"></i><br>I am Benjamin</h2>
             <div class="main-status" id="animatedText">&nbsp;</div>
         <!-- <div class="status">
             <p class="status-gauche">👨‍🎓 Apprentice</p>

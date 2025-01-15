@@ -36,6 +36,7 @@ body{
     width: 100%;
     --background: #000;
     --color: #fff;
+    --linearcolor: #000;
     overflow-x: hidden;
 }
 
@@ -79,7 +80,7 @@ body{
     justify-content: center;
     align-items: center;
     background-image: 
-        linear-gradient(to bottom, transparent, rgba(0, 0, 0,1)),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--linearcolor) 98%),
         url('img/bg-section-acceuil.jpg');
     background-size: cover;
     background-position: center;
@@ -151,7 +152,7 @@ header{
     width: 1px;
     height: 24px;
     margin: 0 10px;
-    background:var(--background);
+    background:var(--color);
 }
 
 .items-contact i{
@@ -221,7 +222,7 @@ header{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: var(--color);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     z-index: 1;
@@ -344,7 +345,8 @@ header{
 .section-parcours,
 .section-competences,
 .section-presentation{
-    background: #000;
+    background: var(--background);
+    background-color: var(--linearcolor);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -402,7 +404,7 @@ header{
     margin-left: 3rem;
     font-family: "Poppins", sans-serif;
     font-size: 1.1rem;
-    color: #ffffffc5;
+    color: var(--color);
 }
 
 .important{
@@ -481,7 +483,7 @@ header{
 .parcours p{
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
-    color: #ffffffc5;
+    color: var(--color);
     margin-left: 3rem;
 }
 
@@ -545,13 +547,13 @@ header{
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 1.3rem;
-    color: #ffffffc5;
+    color: var(--color);
 }
 
 /* CERTIFICATIONS */
 
 .section-certification{
-    background: #000;
+    background: var(--background);
     min-height: 80vh;
     display: flex;
     flex-direction: row;
@@ -636,7 +638,7 @@ header{
 }
 
 .card-back{
-    background: #242424;
+    background: var(--background);
     transform: rotateY(180deg);
     font-size: large;
     font-weight: 400;
@@ -652,7 +654,7 @@ header{
     width: 1200px;
     margin: auto;
     justify-content: center;
-    background: #141414e3;
+    background: var(--background);
     padding: 20px 0 40px 0;
 }
 
@@ -742,7 +744,7 @@ header{
     color: var(--color);
     border-radius: 10px;
     padding: 30px 40px;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid var(--color);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px  rgba(0, 0, 0, .2);
     font-family: 'Poppins', sans-serif;
@@ -767,14 +769,14 @@ header{
     height: 100%;
     background: transparent;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid var(--color);
     border-radius: 40px;
     font-size: 16px;
     color: var(--color);
 }
 
 .input-box-login input:focus{
-    border-color: #ffffff;
+    border-color: var(--background);
     outline: none;
 }
 
@@ -787,7 +789,7 @@ header{
 }
 
 .input-box-login input::placeholder{
-    color: #ffffffb7;
+    color: var(--color);
 }
 
 .input-box-login i{
@@ -820,7 +822,7 @@ header{
 }
 
 .register-link-login span:hover{
-    color: #ffffff82;
+    color: var(--color);
 }
 
 .remember-forgot-login a:hover{
@@ -831,7 +833,7 @@ header{
     width: 100%;
     height: 45px;
     background: transparent;
-    border: 2px solid #ffffffcf;
+    border: 2px solid var(--background);
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -930,9 +932,6 @@ header{
     font-size: 50px;
 }
 
-.section-echecConnexion.btnRedirection{
-
-}
 
 /* ME CONTACTER */
 

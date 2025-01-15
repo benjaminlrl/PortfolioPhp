@@ -105,4 +105,23 @@ links.forEach(link => {
     }
 });
 
+//btn theme color
+const button = document.getElementById('changeColorBtn');
+let couleur = "sombre"; 
+
+// Ajouter un événement au clic
+button.addEventListener('click', function() {
+    if (couleur !== "clear") {
+        // Passer au thème clair
+        document.body.style.setProperty('--color', '#000'); // Couleur du texte
+        document.documentElement.style.setProperty('--background', '#fff'); // Couleur de fond
+        couleur = "clear";  // Mise à jour de la variable couleur
+    } else {
+        // Passer au thème sombre
+        document.body.style.setProperty('--color', '#fff'); // Couleur du texte
+        document.documentElement.style.setProperty('--background', '#000'); // Couleur de fond
+        couleur = "sombre";  // Mise à jour de la variable couleur
+    }
+});
+
 
